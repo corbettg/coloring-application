@@ -1,5 +1,6 @@
-import SettingsSidebar from './SettingsSidebar'
+import CanvasSettings from './CanvasSettings'
+import CanvasImages from './CanvasImages'
 
 export {
-    SettingsSidebar
+    CanvasSettings, CanvasImages
 }
