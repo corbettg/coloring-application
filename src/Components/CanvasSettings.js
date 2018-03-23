@@ -15,7 +15,6 @@ const styles = {
 export default ({ tool, color, fill, fillColor, editFillColor, updateTool, updateSize, updateColor, updateFill, updateFillColor, updateEditFillColor }) =>
 
 <Grid container style={{minHeight:800}}>
-    <hr/>
         <Grid item xs={12} style={{marginBottom:20}}>
             <Typography variant='display2'>Tool:</Typography>
             <Button variant="raised" size="large" color={tool == 'pencil' ? "secondary" : "primary"}
@@ -51,17 +50,17 @@ export default ({ tool, color, fill, fillColor, editFillColor, updateTool, updat
                     <span style={editFillColor ? {fontWeight:'bold', textDecoration:'underline'} : undefined} onClick={(e) => updateEditFillColor(1)}>Fill Color:</span>
                       <Icon style={{color:fillColor, fontSize:40, marginBottom:-10, textShadow:'0 0 1px black' }}>opacity</Icon>
                 </Typography>
-            <div> {mainColors.map(function(colorToUse, ) { return <Button key={colorToUse} variant="raised" size="large"
+            <div> {mainColors.map(function(colorToUse) { return <Button key={colorToUse} variant="raised" size="large"
                                                                           onClick={!editFillColor ? (e) => updateColor(colorToUse) : (e) => updateFillColor(colorToUse)}
                                                                           style={{background: colorToUse}} > </Button>}, this) }
             </div>
             <br/>
-            <div> {rainbow.map(function(colorToUse, ) { return <Button key={colorToUse} variant="raised" size="large"
+            <div> {rainbow.map(function(colorToUse) { return <Button key={colorToUse} variant="raised" size="large"
                                                                        onClick={!editFillColor ? (e) => updateColor(colorToUse) : (e) => updateFillColor(colorToUse)}
                                                                        style={{background: colorToUse}} > </Button>}, this) }
             </div>
             <br/>
-            <div> {pastel.map(function(colorToUse, ) { return <Button key={colorToUse} variant="raised" size="large"
+            <div> {pastel.map(function(colorToUse) { return <Button key={colorToUse} variant="raised" size="large"
                                                                       onClick={!editFillColor ? (e) => updateColor(colorToUse) : (e) => updateFillColor(colorToUse)}
                                                                       style={{background: colorToUse}} > </Button>}, this) }
             </div>

@@ -2,10 +2,10 @@ import React, { Component } from 'react'
 import { SketchPad, TOOL_PENCIL, TOOL_LINE, TOOL_RECTANGLE, TOOL_ELLIPSE } from '../../node_modules/react-sketchpad/lib'
 import { Button } from 'material-ui'
 
-const mainColors = ['#FF0000', '#FFC0CB', '#800080', '#4B0082', '#0000FF', '#00FFFF', 
+const mainColors = ['#FF0000', '#FFC0CB', '#800080', '#4B0082', '#0000FF', '#00FFFF',
                     '#006666', '#008000', '#90EE90', '#00FF00', '#FFFF00', '#FFA500'];
 
-var colorButtons = mainColors.map(function(colorToUse) { 
+var colorButtons = mainColors.map(function(colorToUse) {
                        return <Button variant="raised" size="small" onClick={(e) => this.setState({color: '#FFA500' })}
                                       style={{background: colorToUse}} > </Button>
                    })
@@ -94,7 +94,7 @@ export default class SketchExample extends Component
         </div>
         <Button variant="raised" size="small" onClick={(e) => this.setState({color: '#FFA500' })}
                                       style={{background: '#FFA500'}} > </Button>
-        <div> {mainColors.map(function(colorToUse, ) { 
+        <div> {mainColors.map(function(colorToUse, ) {
                        return <Button key={colorToUse} variant="raised" size="small" onClick={(e) => this.setState({color: colorToUse})}
                                       style={{background: colorToUse}} > </Button>
                    }, this)}
