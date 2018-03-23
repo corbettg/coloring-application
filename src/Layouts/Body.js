@@ -48,7 +48,7 @@ export default class Body extends Component
                 <div>
                     <hr/>
                     <div style={{float:'left', marginRight:20, border: '5px solid #006666',
-                                 background:'url("/images/bakery_Kinza_Kirkman.gif")', backgroundSize:'cover'}}>
+                                 background:'url("/images/treadmill_Devan_Corcoran.gif")', backgroundSize:'cover'}}>
                         <SketchPad
                         width={1280} //prod: 1920
                         height={854}// prod 1080
@@ -61,7 +61,7 @@ export default class Body extends Component
                         />
                     </div>
                     <div style={{float:'left', marginRight:20, border: '5px solid #006666', position:'absolute', zIndex:999, width:'1280px', height:'854px', pointerEvents:'none',
-                                 background:'url("/images/bakery_Kinza_Kirkman.gif")', backgroundSize:'cover'}}></div>
+                                 background:'url("/images/treadmill_Devan_Corcoran.gif")', backgroundSize:'cover'}}></div>
                 </div>
             </Grid>
             <Grid item xs={3}>
