@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { AppBar, Grid, Tabs, Typography, Button, Icon, Paper } from 'material-ui'
 import { Tab } from 'material-ui/Tabs';
-import { CanvasSettings, CanvasImages } from '../Components'
-import { SketchPad, TOOL_PENCIL, TOOL_LINE, TOOL_RECTANGLE, TOOL_ELLIPSE } from '../../node_modules/react-sketchpad/lib'
+import { CanvasSettings, CanvasImages, EmailColoringPage } from '../Components'
+import { SketchPad } from '../../node_modules/react-sketchpad/lib'
 
 export default class Body extends Component
 {
@@ -10,13 +10,13 @@ export default class Body extends Component
     super(props);
 
     this.state = {
-      tool:TOOL_PENCIL,
+      tool:'pencil',
       size: 5,
       color: '#000000',
       fill: false,
       fillColor: '#000000',
       items: [],
-      currentTab: 0,
+      currentTab: 2,
       editFillColor: 0,
       backgroundImage: 'treadmill_Devan_Corcoran.gif'
     }
@@ -47,8 +47,8 @@ export default class Body extends Component
       return (
         <Grid container>
             <Grid item xs={9}>
-                <div>
-                    <div style={{float:'left', marginRight:20, border: '3px solid #000', width:'1280px', height:'854px',
+                <div >
+                    <div id="ColorPageDiv" style={{float:'left', marginRight:20, border: '3px solid #000', width:'1280px', height:'854px',
                                  background:`no-repeat center/100% url("/images/${backgroundImage}")`}}>
                         <SketchPad
                         width={1280} //prod: 1920
@@ -78,7 +78,7 @@ export default class Body extends Component
                                             updateEditFillColor={this.updateEditFillColor} />}
                     {currentTab === 1 && <CanvasImages
                                             updateBackgroundImage={this.updateBackgroundImage} />}
-                    {currentTab === 2 && <Typography style={{minHeight:800}}>Other Settings</Typography>}
+                    {currentTab === 2 && <EmailColoringPage />}
                     <AppBar position="static" color="default" style={{width:'100%'}}>
                         <Tabs
                             value={currentTab}
