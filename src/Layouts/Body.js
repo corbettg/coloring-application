@@ -10,11 +10,11 @@ export default class Body extends Component
     super(props);
 
     this.state = {
-      tool:'pencil',
+      tool:'rectangle',
       size: 5,
-      color: '#000000',
-      fill: false,
-      fillColor: '#000000',
+      color: '#006666',
+      fill: true,
+      fillColor: '#006666',
       items: [],
       currentTab: 2,
       editFillColor: 0,
@@ -46,24 +46,22 @@ export default class Body extends Component
 
       return (
         <Grid container>
-            <Grid item xs={9}>
-                <div >
-                    <div id="ColorPageDiv" style={{float:'left', marginRight:20, border: '3px solid #000', width:'1280px', height:'854px',
-                                 background:`no-repeat center/100% url("/images/${backgroundImage}")`}}>
-                        <SketchPad
-                        width={1280} //prod: 1920
-                        height={854}// prod 1080
-                        animate={true}
-                        size={size}
-                        color={color}
-                        fillColor={fill ? fillColor : ''}
-                        items={items}
-                        tool={tool}
-                        />
-                    </div>
-                    <div style={{float:'left', marginRight:20, border: '3px solid #000', position:'absolute', zIndex:999, width:'1280px', height:'854px', pointerEvents:'none',
-                                 background:`no-repeat center/100% url("/images/${backgroundImage}")`}}></div>
+            <Grid item xs={9}  id="ColorPageDiv" >
+                <div style={{float:'left', marginRight:20, border: '3px solid #000', width:'1280px', height:'854px',
+                             background:`no-repeat center/100% url("/images/${backgroundImage}")`}}>
+                    <SketchPad
+                    width={1280} //prod: 1920
+                    height={854}// prod 1080
+                    animate={true}
+                    size={size}
+                    color={color}
+                    fillColor={fill ? fillColor : ''}
+                    items={items}
+                    tool={tool}
+                    />
                 </div>
+                <div style={{float:'left', marginRight:20, border: '3px solid #000', position:'absolute', zIndex:999, width:'1280px', height:'854px', pointerEvents:'none',
+                             background:`no-repeat center/100% url("/images/${backgroundImage}")`}}></div>
             </Grid>
             <Grid item xs={3}>
 
