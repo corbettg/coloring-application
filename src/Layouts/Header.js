@@ -1,5 +1,5 @@
 import React, { Fragment }from 'react'
-import { AppBar, Toolbar, Typography, Button, colors } from 'material-ui'
+import { AppBar, Toolbar, Typography, colors } from 'material-ui'
 
 const styles = {
     AppBar: {
@@ -7,7 +7,7 @@ const styles = {
     }
 }
 
-export default props => 
+export default props =>
 <Fragment>
     <AppBar position='static' style={ styles.AppBar }>
         <Toolbar>
@@ -17,4 +17,3 @@ export default props =>
         </Toolbar>
     </AppBar>
 </Fragment>
-

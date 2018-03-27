@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { AppBar, Grid, Tabs, Typography, Button, Icon, Paper } from 'material-ui'
+import { AppBar, Grid, Tabs, Icon } from 'material-ui'
 import { Tab } from 'material-ui/Tabs';
 import { CanvasSettings, CanvasImages, EmailColoringPage } from '../Components'
 import { SketchPad } from '../../node_modules/react-sketchpad/lib'
@@ -12,12 +12,12 @@ export default class Body extends Component
     this.state = {
       tool:'rectangle',
       size: 5,
-      color: '#006666',
+      color: '#000000',
       fill: true,
-      fillColor: '#006666',
+      fillColor: '#000000',
       items: [],
-      currentTab: 2,
-      editFillColor: 0,
+      currentTab: 0,
+      editFillColor: false,
       backgroundImage: 'treadmill_Devan_Corcoran.gif'
     }
     this.updateTool = this.updateTool.bind(this)
@@ -46,7 +46,7 @@ export default class Body extends Component
 
       return (
         <Grid container>
-            <Grid item xs={9}  id="ColorPageDiv" >
+            <Grid item xs={8}  id="ColorPageDiv" >
                 <div style={{float:'left', marginRight:20, border: '3px solid #000', width:'1280px', height:'854px',
                              background:`no-repeat center/100% url("/images/${backgroundImage}")`}}>
                     <SketchPad
@@ -63,7 +63,7 @@ export default class Body extends Component
                 <div style={{float:'left', marginRight:20, border: '3px solid #000', position:'absolute', zIndex:999, width:'1280px', height:'854px', pointerEvents:'none',
                              background:`no-repeat center/100% url("/images/${backgroundImage}")`}}></div>
             </Grid>
-            <Grid item xs={3}>
+            <Grid item xs={4}>
 
 
                 <div>
@@ -85,9 +85,9 @@ export default class Body extends Component
                             textColor="primary"
                             scrollable
                             scrollButtons="auto">
-                            <Tab label={<Icon style={{fontSize:40, marginTop:-5 }}>settingsk</Icon>}  style={{width:'30%'}} />
-                            <Tab label={<Icon style={{fontSize:40, marginTop:-5 }}>image</Icon>}  style={{width:'30%'}} />
-                            <Tab label={<Icon style={{fontSize:50, marginTop:-5 }}>art_track</Icon>} style={{width:'30%'}} />
+                            <Tab label={<Icon style={{fontSize:40, marginTop:-2 }}>settingsk</Icon>}  style={{width:'30%'}} />
+                            <Tab label={<Icon style={{fontSize:40, marginTop:-2 }}>image</Icon>}  style={{width:'30%'}} />
+                            <Tab label={<Icon style={{fontSize:40, marginTop:-2 }}>email</Icon>} style={{width:'30%'}} />
                         </Tabs>
                     </AppBar>
                 </div>

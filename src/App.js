@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
-import SketchExample from './Components/Canvas'
 import { Header, Body } from './Layouts'
 
 class App extends Component {

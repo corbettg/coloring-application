@@ -17,17 +17,17 @@ export default ({ tool, color, fill, fillColor, editFillColor, updateTool, updat
 <Grid container style={{minHeight:800}}>
         <Grid item xs={12} style={{marginBottom:20}}>
             <Typography variant='display2'>Tool:</Typography>
-            <Button variant="raised" size="large" color={tool == 'pencil' ? "secondary" : "primary"}
+            <Button variant="raised" size="large" color={tool === 'pencil' ? "secondary" : "primary"}
                 onClick={() => updateTool('pencil')} style={styles.button}>Pencil</Button>
-            <Button variant="raised" size="large" color={tool == 'line' ? "secondary" : "primary"}
+            <Button variant="raised" size="large" color={tool === 'line' ? "secondary" : "primary"}
                 onClick={() => updateTool('line')} style={styles.button}>Line</Button>
-            <Button variant="raised" size="large" color={tool == 'ellipse' ? "secondary" : "primary"}
+            <Button variant="raised" size="large" color={tool === 'ellipse' ? "secondary" : "primary"}
                 onClick={() => updateTool('ellipse')} style={styles.button}>Ellipse</Button>
-            <Button variant="raised" size="large" color={tool == 'rectangle' ? "secondary" : "primary"}
+            <Button variant="raised" size="large" color={tool === 'rectangle' ? "secondary" : "primary"}
                 onClick={() => updateTool('rectangle')} style={styles.button}>Rectangle</Button>
 
             {(tool === 'ellipse' || tool === 'rectangle') ?
-                  <Typography variant='headline'>Fill in: <Checkbox value={fill} style={{margin:'0 8'}} onChange={(e) => updateFill(!fill)} /></Typography>
+                  <Typography variant='headline'>Fill in: <Checkbox checked={fill} style={{margin:'0 8'}} onChange={(e) => updateFill(!fill)} /></Typography>
             : ''}
         </Grid>
 
@@ -45,9 +45,9 @@ export default ({ tool, color, fill, fillColor, editFillColor, updateTool, updat
         <Grid item xs={12} style={{marginBottom:20}}>
             <Typography variant='display2'>Color:</Typography>
                 <Typography variant='headline' style={{marginBottom:10}}>
-                    <span style={!editFillColor ? {fontWeight:'bold', textDecoration:'underline'} : undefined} onClick={(e) => updateEditFillColor(0)}>Main Color:</span>
+                    <span style={!editFillColor ? {fontWeight:'bold', textDecoration:'underline'} : undefined} onClick={(e) => updateEditFillColor(false)}>Main Color:</span>
                       <Icon style={{color:color, fontSize:40, marginBottom:-10, textShadow:'0 0 1px black' }}>opacity</Icon>
-                    <span style={editFillColor ? {fontWeight:'bold', textDecoration:'underline'} : undefined} onClick={(e) => updateEditFillColor(1)}>Fill Color:</span>
+                    <span style={editFillColor ? {fontWeight:'bold', textDecoration:'underline'} : undefined} onClick={(e) => updateEditFillColor(true)}>Fill Color:</span>
                       <Icon style={{color:fillColor, fontSize:40, marginBottom:-10, textShadow:'0 0 1px black' }}>opacity</Icon>
                 </Typography>
             <div> {mainColors.map(function(colorToUse) { return <Button key={colorToUse} variant="raised" size="large"

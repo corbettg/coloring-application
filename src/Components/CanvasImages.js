@@ -1,5 +1,5 @@
 import React from 'react'
-import { Typography, GridList } from 'material-ui'
+import { GridList } from 'material-ui'
 import { GridListTile } from 'material-ui/GridList';
 
 const coloringImages = ['Arcade_Alex_Altenkirch.gif', 'artbook_Jordan_McFaul.gif', 'atrium_Jordan_McFaul.gif', 'atrium_Lauren_Arsena.gif', 'bakery_Kinza_Kirkman.gif',
@@ -14,7 +14,7 @@ export default ({ updateBackgroundImage }) =>
   <GridList cellHeight={160} cols={2} style={{maxHeight: 800,}}>
     {coloringImages.map(image => (
       <GridListTile key={image} cols={.9} style={{border:'5px solid #006666', margin:5}}>
-        <img src={`/images/${image}`} onClick={(e) => updateBackgroundImage(image)} />
+        <img src={`/images/${image}`} onClick={(e) => updateBackgroundImage(image)} alt={image} />
       </GridListTile>
     ))}
   </GridList>
